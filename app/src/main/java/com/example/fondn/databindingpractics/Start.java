@@ -1,24 +1,25 @@
 package com.example.fondn.databindingpractics;
 
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.fondn.databindingpractics.databinding.ActivityStartBinding;
+
 public class Start extends AppCompatActivity {
-    TextView one,two,three;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start);
+
+        ActivityStartBinding binding = DataBindingUtil.setContentView(this,R.layout.activity_start);
+        binding.textviewone.setText("Sagor");
+        binding.textViewIDTwo.setText("khan");
+        binding.textViewIDThreeFour.setText("Sabuj");
 
 
-        one = (TextView) findViewById(R.id.textViewIDOne);
-        two = (TextView) findViewById(R.id.textViewIDTwo);
-        three = (TextView) findViewById(R.id.textViewIDThree);
 
-        one.setText("sagor");
-        two.setText("khan");
-        three.setText("Sabuj");
     }
 }
